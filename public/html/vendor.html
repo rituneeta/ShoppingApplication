@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ <title>Vendor</title>
+
+  <script src="../js/jquery.js"></script>
+  <script src="../js/vendor.js"></script>
+
+  <style>
+      body {
+             background-image: url("/media/login.jpg");
+             margin: 100px
+         }
+          table {
+              border: 1px solid black;
+              font-family: arial, sans-serif;
+                border-collapse: collapse;
+                width: 100%;
+            }
+            th,td {
+            border: 1px solid black;
+            text-align: center;
+             padding: 2px;
+             
+          }
+         </style>
+</head>
+<br/><br/>
+<br/><br/><br/>
+<body class="container">
+
+<div class="container row">
+    <div class="col-sm-4 pull-center"></div>
+    <div class="jumbotron col-sm-4 pull-center">
+        <form align="center" >
+            <div>
+                <label><b style="color:powderblue"><font size="5"><i>Vendor name:  </i></font></b></label>
+                
+                <input type="text" id="name" name="name"/>
+               
+            </div>
+            <br/>
+            <br/>
+            <div>
+                <button  id="add" style="color:black"><b>Add Vendor</b>  </button>
+                  </div>
+        </form>                  
+    </div>          
+</div>
+</body>
+
+<br/>
+<br/>
+<h2  align="center"><b style="color:powderblue"><font size="6"><i> Vendor List </i></font></b> </h2>
+
+<table id="vendorlist" style="width:50%" align="center"  >
+     
+  
+</table>
+</html>

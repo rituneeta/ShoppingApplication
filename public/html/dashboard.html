@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Signup Here</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <script src="/js/jquery.js"></script>
+        <script src="/js/dashboard.js"></script>
+        <style>
+             body {
+                    background-image: url("/media/login.jpg");
+                    
+                }
+            .card {
+              box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4);
+              transition: 0.3s;
+              width: 70%;
+              margin: 30px auto;
+              padding: 10px 10px 10px 10px;
+              background-color:snow
+            }
+            
+            .card:hover {
+              box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+            }
+            
+            .container {
+              padding: 2px 16px;
+            }
+      </style>
+      
+    </head>
+    <body class="container">
+        <div class="page-header">
+            <h1><b><font size="7"><i style="color: powderblue">Dashboard</i></font></b></h1>
+        </div>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a href="/login"><b style="color:black;"><font size="4"><i>Home</i></font></b></a></li>
+                        <li><a href="/pages/product.html"><b style="color:black;"><font size="4"><i> Product</i></font></b></a></li>
+                        <li><a href="/pages/vendor.html"><b style="color:black;"><font size="4"><i>Vendor</i></font></b></a></li>
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li ><a href="/pages/cart.html"><b style="color:black;"><font size="4"><i id="cart"></i></font></b></a></li>
+                        <li><a href="/logout"><b style="color:black;"><font size="4"><i>Log Out</i></font></b></a></li>
+                        
+                        
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+        
+        <div id="productList">
+            <div class=" col-sm-3"></div>
+            <div class="col-sm-6 pull-center" id="productList">
+                <!-- <input class="btn btn-primary" type="button" value="Log In" id="login" /> -->
+                
+            </div>          
+        </div>
+
+       
+    </body>
+</html>
