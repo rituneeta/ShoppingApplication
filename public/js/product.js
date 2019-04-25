@@ -14,10 +14,10 @@ function refreshList() {
       $('#productlist').append(
        // `<li>name: ${product.name} ,  price ${product.price} ,  qantity ${product.quantity}</li>`
        `<tr>
-       <td>${product.name}</td>
+       <td >${product.name}</td>
        <td>${product.price}</td>
        <td>${product.quantity}</td>
-       <td><button  value="${product.id}"onclick="deleteElement(event)">
+       <td style="color:black"><button  value="${product.id}"onclick="deleteElement(event)">
        Delete</button></td>
      </tr>`
       )

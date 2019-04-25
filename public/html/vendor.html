@@ -5,14 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
  <title>Vendor</title>
-
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+      
   <script src="../js/jquery.js"></script>
   <script src="../js/vendor.js"></script>
 
   <style>
       body {
              background-image: url("/media/login.jpg");
-             margin: 100px
+             margin-bottom: 6cm
          }
           table {
               border: 1px solid black;
@@ -21,23 +22,41 @@
                 width: 100%;
             }
             th,td {
-            border: 1px solid black;
+            border: 1px solid yellowgreen;
             text-align: center;
              padding: 2px;
              
           }
+          .container {
+              padding: 2px 16px;
+            }
          </style>
 </head>
-<br/><br/>
-<br/><br/><br/>
-<body class="container">
+<body class="container"  style="color:black">
+        <div class="page-header" >
+            <h1><b><font size="7"><i style="color: powderblue">Vendor</i></font></b></h1>
+        </div>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid"  >
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" >
+                    <ul class="nav navbar-nav">
+                        <li><a href="/login"><b style="color:black;"><font size="4"><i>Home</i></font></b></a></li>
+                        <li><a href="/pages/product.html"><b style="color:black;"><font size="4"><i> Product</i></font></b></a></li>
+                        <li><a href="/pages/vendor.html"><b style="color:black;"><font size="4"><i>Vendor</i></font></b></a></li>
+                    </ul>
+
+                   
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
 
 <div class="container row">
     <div class="col-sm-4 pull-center"></div>
     <div class="jumbotron col-sm-4 pull-center">
         <form align="center" >
-            <div>
-                <label><b style="color:powderblue"><font size="5"><i>Vendor name:  </i></font></b></label>
+            <div style="color:aqua">
+                <label><b style="color:black"><font size="5"><i>Vendor name:  </i></font></b></label>
                 
                 <input type="text" id="name" name="name"/>
                
@@ -55,9 +74,8 @@
 <br/>
 <br/>
 <h2  align="center"><b style="color:powderblue"><font size="6"><i> Vendor List </i></font></b> </h2>
-
-<table id="vendorlist" style="width:50%" align="center"  >
-     
-  
+<br/>
+<table id="vendorlist" style="width:50%" align="center"  > 
 </table>
+
 </html>

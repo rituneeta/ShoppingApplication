@@ -3,15 +3,15 @@ function refreshList() {
     $('#vendorlist').empty();
     $('#vendorlist').append(
       `<tr>
-      <th>Name</th>
-      <th>Action</th>
+      <th style="color:black">Name</th>
+      <th style="color:black">Action</th>
     </tr>`
     )
     for (let vendor of data) {
       $('#vendorlist').append(
         
     `<tr><td>${vendor.name}</td>
-      <td>  <button class="btn btn-primary" type="button" id="${vendor.id}"
+      <td style="color:black">  <button class="btn btn-primary" type="button" id="${vendor.id}"
             onclick="deleteVendor(event)">Delete</button> 
        </td>
       </tr>`

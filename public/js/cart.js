@@ -43,22 +43,19 @@ function refreshList() {
 
       if(data.length>0){
         $('#productList').append(`
-        <div class="row" style="color:white">
-          <div class="col-md-4">Grand Total</div>
+        <br/>
+        <br/>
+        <div class="row" style="color:yellow" align="center">
+          <div class="col-md-4" ><font size="6"><b >Grand Total :<b></font></div>
           <div class="col-md-4"></div>
-          <div id="total" class="col-md-4">${cost}</div>
+          <div id="total" class="col-md-4"> <font size="6">${cost}</font></div>
         </div>
         `);
       }
     })
   }
 
-  // function refreshCart(){
-  //   $.get('/cartLen',(data)=>{
-  //       $("#cart").html(`Cart( ${data.length} )`)
-  //   })  
-  // }
-
+ 
   function removeFromCart(event){
     console.log(event.target.value)
     console.log("remove me aya")
