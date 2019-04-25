@@ -147,15 +147,23 @@ app.post('/products', (req, res) => {
 })
 
 app.post('/deleteProduct',(req,res)=>{
-  db.Product.destroy({
+  db.CartItems.destroy({
     where:{
-      id: req.body.id
+      productId: req.body.id
     }
-  }).then(data=>{
-    res.send({
-      success: true
+  })
+  .then(()=>{
+    db.Product.destroy({
+      where:{
+        id: req.body.id
+      }
+    }).then(data=>{
+      res.send({
+        success: true
+      })
     })
   })
+  
 })
 
 app.get('/vendors', (req, res) => {
@@ -230,9 +238,12 @@ app.get('/cartItems', (req, res) => {
 })
 
 app.post('/removeFromCart', (req, res) => {
+  console.log(".......................................")
+  console.log(req.body)
+  console.log("........................................")
   db.CartItems.destroy({
     where: {
-      id: req.body.productId,
+      productId: req.body.productId,
       userName: req.session.user.name
     }
   }).then(data => {
@@ -243,13 +254,43 @@ app.post('/removeFromCart', (req, res) => {
 })
 
 app.post('/deleteVendor', (req, res) => {
-  db.Vendor.destroy({
+  db.Product.findAll({
+    attributes:['id'],
     where: {
-      id: req.body.id
+      vendorId: req.body.id
     }
-  }).then(data => {
-    res.send({
-      success: true
+  }).then(data=>{
+    let arr=[]
+    data.forEach(element => {
+      console.log(element.dataValues.id);
+      arr.push(element.dataValues.id)
+    });
+    // console.log(data)
+    db.CartItems.destroy({
+      where: {
+        productId:{
+          [op.in]:arr
+        }
+      }
+    })
+    .then(()=>{
+      db.Product.destroy({
+        where:{
+          vendorId: req.body.id
+        }
+      })
+      .then(()=>{
+        db.Vendor.destroy({
+          where: {
+            id: req.body.id
+          }
+        })
+        .then(data=>{
+          res.send({
+            success: true
+          })
+        })
+      })    
     })
   })
 })
@@ -390,6 +431,3 @@ db.sequelize.sync({
       console.log(`Started on http://localhost:${PORT}`)
     })
   })
-
-
-

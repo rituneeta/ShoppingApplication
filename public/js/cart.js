@@ -3,12 +3,15 @@ function refreshList() {
     $.get('/cartItems', (data) => {
       $('#productList').empty()
       let n = 0;
+      let cost = 0;
       while(n<data.length){
         console.log("printing line")
         let txt = '<div class="row">';
         for(let i =0;i<3; i++,n++){
           console.log(n,data.length)
           if(n<data.length){
+            cost = cost + data[n].price * data[n].quantity;
+
             txt +=
             `
             <div class=" col-md-4">
@@ -35,8 +38,18 @@ function refreshList() {
         if(n >= data.length){
           break;
         }
+        
       }
-      
+
+      if(data.length>0){
+        $('#productList').append(`
+        <div class="row" style="color:white">
+          <div class="col-md-4">Grand Total</div>
+          <div class="col-md-4"></div>
+          <div id="total" class="col-md-4">${cost}</div>
+        </div>
+        `);
+      }
     })
   }
 

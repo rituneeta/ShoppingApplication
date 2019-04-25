@@ -41,13 +41,13 @@ const CartItems= sequelize.define('cartitem' ,{
 })
 
 Product.belongsTo(Vendor);
-Vendor.hasMany(Product);
+Vendor.hasMany(Product, {onDelete: "cascade"});
 
 CartItems.belongsTo(Product)
-Product.hasMany(CartItems)
+Product.hasMany(CartItems, {onDelete: "cascade"})
 
 CartItems.belongsTo(User)
-User.hasMany(CartItems)
+User.hasMany(CartItems, {onDelete: "cascade"})
 
 module.exports={
   sequelize,
